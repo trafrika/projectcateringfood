@@ -1,0 +1,634 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container untuk form login */
+.login-body {
+    background-image: url('images/bg_login.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;  
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.9); /* Memberi background putih transparan */
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 380px; /* Lebar maksimum form */
+    width: 100%; /* Menyesuaikan lebar layar kecil */
+    padding: 20px 30px;
+    margin: 0 auto;
+}
+
+
+/* Styling untuk form inputs dan tombol */
+input[type="email"], input[type="password"], button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Styling untuk tombol */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Styling untuk pesan kesalahan */
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.register-body {
+    background-image: url('images/bg_login.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;  
+}
+
+.register-container, .login-container {
+    background: rgba(255, 255, 255, 0.9); /* Memberi background putih transparan */
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Styling untuk form inputs dan tombol */
+input[type="text"], input[type="email"], input[type="password"], button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Styling untuk tombol */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+/* Style untuk Navbar */
+.navbar {
+    display: flex; /* Menggunakan Flexbox untuk tata letak yang responsif */
+    justify-content: space-between; /* Menyebarkan elemen-elemen navbar */
+    align-items: center; /* Menyelaraskan elemen secara vertikal */
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    width: 100%; /* Navbar mengambil seluruh lebar layar */
+    box-sizing: border-box; /* Agar padding tidak mempengaruhi ukuran total */
+}
+
+/* Logo di kiri */
+.navbar-left .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu utama (nav items) */
+.main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.main-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Tombol Login di kanan */
+.navbar-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Tombol Logout */
+.btn-logout {
+    margin: 0%;
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #cc7a00; /* Efek hover */
+}
+
+/* Responsif - Navbar Menyesuaikan pada Layar Lebar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Navbar akan berorientasi vertikal di layar kecil */
+        align-items: center; /* Menyelaraskan elemen-elemen secara horizontal */
+    }
+
+    .main-menu {
+        display: flex;
+        flex-direction: column; /* Menu berubah menjadi vertikal */
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar-right {
+        margin-top: 10px; /* Memberikan jarak antara menu dan tombol login */
+    }
+
+    .btn-logout {
+        width: 100%; /* Tombol Login akan lebih lebar di layar kecil */
+        padding: 10px;
+    }
+}
+
+
+
+/* Home Section*/
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Tinggi penuh layar */
+    overflow: hidden; /* Mencegah elemen keluar dari container */
+}
+
+/* Gambar Hero */
+.hero-section .hero-image {
+    width: 100%; /* Gambar memenuhi lebar layar */
+    height: 100%; /* Gambar memenuhi tinggi layar */
+    object-fit: cover; /* Menjaga proporsi gambar agar tidak terdistorsi */
+    position: absolute; /* Posisi absolut agar menjadi background */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Letakkan gambar di bawah teks */
+}
+
+/* Teks di Hero Section */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Memusatkan teks */
+    color: #fff; /* Warna teks putih */
+    text-align: center; /* Rata tengah */
+    z-index: 2; /* Teks di atas gambar */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks agar terlihat lebih jelas */
+}
+
+/* Styling untuk Heading dan Paragraph */
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 20px;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+}
+
+/* Produk Section */
+/* Form Pencarian */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #ff6600;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.search-btn:hover {
+    background-color: #ff4500;
+}
+
+/* Produk Section */
+.produk-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.produk-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.produk-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.produk-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Jarak antar produk */
+    justify-content: space-between;
+}
+
+.produk-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px); /* Menampilkan 4 produk dalam satu baris */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.produk-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produk-item h3 {
+    font-size: 24px;
+    margin: 15px 0;
+    color: #333;
+}
+
+.produk-item p {
+    font-size: 16px;
+    color: #777;
+}
+
+.produk-item .btn-pesan {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.produk-item .btn-pesan:hover {
+    background-color: #ff4500;
+}
+
+
+
+
+/* Pemesanan Section */
+.pemesanan-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.pemesanan-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pemesanan-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.pemesanan-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pemesanan-section input[type="number"],
+.pemesanan-section input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.pemesanan-section button {
+    background-color: #ff6600;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color
+}
+
+.notification {
+    background-color: #f0ad4e;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/*konfirmasi section*/
+.konfirmasi-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.konfirmasi-container {
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-transaksi {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.btn-transaksi:hover {
+    background-color: #45a049;
+}
+
+/* transaksi */
+.transaksi-section{
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    }
+    
+    .transaksi-container{
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    }
+    
+    select.metode-pembayaran {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #333;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+    }
+    select.metode-pembayaran option {
+        padding: 10px;
+        font-weight: bold;
+    }
+    
+    .struk-section {
+        padding: 50px 20px;
+        background-color: #f9f9f9;
+    }
+    
+    .struk-container {
+        max-width: 600px;
+        height: auto;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* RIWAYAT */
+.riwayat-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.riwayat-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px;
+}
+
+.riwayat-item {
+    flex: 1 1 calc(33.333% - 30px); 
+    display: flex;
+    flex-direction: column; 
+    background-color: #fff;
+    padding: 20px; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    align-items: flex-start; 
+    box-sizing: border-box; 
+    min-width: 300px; 
+}
+
+.produk-item-history { 
+    display: flex; 
+    justify-content: center;
+    width: 100%; 
+} 
+
+.produk-item-history img { 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+    width: 150px; 
+}
+
+.detail-item-history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    align-items: flex-start; 
+}
+
+.detail-item-history p {
+    margin: 0px 0;
+    text-align: left; 
+}
+
+    
+      
+/* FAQ Section */
+.faq-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.faq-item h3 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #777;
+    margin-top: 10px;
+}
+
+.faq-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    margin: auto; /* Memusatkan form */
+}
+
+.feedback-form textarea {
+    width: 100%; /* Memastikan textarea mengisi lebar penuh */
+    height: 200px; /* Meningkatkan tinggi textarea */
+    resize: vertical; /* Memungkinkan pengguna untuk mengubah ukuran secara vertikal */
+    padding: 15px; /* Memberikan ruang di dalam textarea */
+    font-size: 16px; /* Mengatur ukuran font */
+    border: 2px solid #ddd; /* Memberikan border */
+    border-radius: 8px; /* Membuat border bulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Menambahkan transisi */
+    background-color: #fff; /* Menambahkan warna latar belakang */
+}
+
+.feedback-form textarea:focus {
+    border-color: #333; /* Mengubah warna border saat fokus */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan saat fokus */
+}
+
+.feedback-form button {
+    margin-top: 20px; /* Memberikan ruang di atas tombol */
+    padding: 10px 20px; /* Mengatur padding tombol */
+    font-size: 16px; /* Mengatur ukuran font tombol */
+    color: #ffffff; /* Warna teks tombol */
+    background-color: #ff7b00; /* Warna latar belakang tombol */
+    border-color: #0056b3; /* Menghilangkan border tombol */
+    border-radius: 8px; /* Membuat border bulat pada tombol */
+    cursor: pointer; /* Mengubah kursor menjadi pointer */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Menambahkan transisi */
+}
+
+.feedback-form button:hover {
+    background-color: #da5d15; /* Mengubah warna tombol saat hover */
+    transform: translateY(-3px); /* Sedikit mengangkat tombol saat hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 0 15px;
+    }
+
+    .faq-item {
+        padding: 15px;
+    }
+
+    .faq-section h2 {
+        font-size: 28px;
+    }
+
+    .faq-item h3 {
+        font-size: 20px;
+    }
+
+    .faq-item p {
+        font-size: 14px;
+    }
+}
+
+
