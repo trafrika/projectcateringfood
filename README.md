@@ -19,7 +19,7 @@ Untuk menjalankan proyek ini di lingkungan lokalmu, ikuti langkah-langkah beriku
 - Jalankan code dengan kata kunci 'localhost/catering_makanan/' untuk tampilan user dan 'localhost/catering_makanan/admin/' untuk tampilan admin
 
 usn dan pass di project
-- username admin:jay
+- username admin: jay
 - password: 45
 
 Gambaran Dokumentasi Web:
