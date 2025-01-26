@@ -18,6 +18,10 @@ Untuk menjalankan proyek ini di lingkungan lokalmu, ikuti langkah-langkah beriku
 - Lalu import database 'pemesanan_catering2' di localhost/phpmyAdmin
 - Jalankan code dengan kata kunci 'localhost/catering_makanan/' untuk tampilan user dan 'localhost/catering_makanan/admin/' untuk tampilan admin
 
+usn dan pass di project
+- username admin:jay
+- password: 45
+
 Gambaran Dokumentasi Web:
 ![Screenshot (369)](https://github.com/user-attachments/assets/b44ea68a-48f5-4d96-807c-4d03e8550295)
 ![Screenshot (371)](https://github.com/user-attachments/assets/be4f80e3-9c19-4279-9e28-8c45af18a840)
